@@ -30,4 +30,3 @@ def handle_join_game(data):
 
 if __name__ == '__main__':
     socketio.run(app)
-
