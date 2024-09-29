@@ -4,9 +4,16 @@
     height: 100vh;
 }
 
-.board {
-    position: relative;
+.content {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.board {
+    flex: 1;
+    position: relative;
     background-color: #f0f0f0;
     border-bottom: 1px solid #ccc;
     overflow: hidden;
@@ -21,6 +28,7 @@
     flex-wrap: wrap;
     align-content: flex-start;
 }
+
 
 .draggable-word, .placed-word, .dragging-word {
     padding: 5px;

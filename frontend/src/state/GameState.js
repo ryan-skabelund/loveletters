@@ -35,7 +35,7 @@ export const GameStateProvider = ({ children }) => {
 
     // Initialize the socket only once
     useEffect(() => {
-        socketRef.current = new Socket("http://127.0.0.1:5000");
+        socketRef.current = new Socket("https://e87a-149-169-48-244.ngrok-free.app");
 
         socketRef.current.on("game_state", (data) => {
             updateGameState(data);
@@ -50,6 +50,10 @@ export const GameStateProvider = ({ children }) => {
             console.log("Failed to join");
             alert("Failed to join");
             setPendingJoin(false);
+        });
+
+        socketRef.current.on("refresh", (data) => {
+            window.location.reload()
         });
 
         return () => socketRef.current.disconnect();

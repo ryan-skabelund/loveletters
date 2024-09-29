@@ -30,7 +30,7 @@ function Gameplay() {
     
     // Initialize availableWords only once when words change
     useEffect(() => {
-        if (availableWords.length === 0 && players && players[name] && players[name].words && players[name].words.length > 0) {
+        if (availableWords.length === 0 && placedWords.length === 0 && players && players[name] && players[name].words && players[name].words.length > 0) {
             const initialAvailableWords = players[name].words.map((word, index) => ({
                 id: `word-${index}`,
                 word,
@@ -101,12 +101,14 @@ function Gameplay() {
 
         setActiveId(null);
     };
-
+    
     return (
         <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
             <div className="gameplay">
-                <DroppableBoard placedWords={placedWords} boardRef={boardRef} />
-                <WordContainer words={availableWords} />
+                <div className="content">
+                    <DroppableBoard placedWords={placedWords} boardRef={boardRef} />
+                    <WordContainer words={availableWords} />
+                </div>
                 {!confirmSubmit ? (
                     <button className="submit-button" onClick={() => setConfirmSubmit(true)}>Submit</button>
                 ) : (
@@ -124,6 +126,7 @@ function Gameplay() {
             </DragOverlay>
         </DndContext>
     );
+    
 }
 
 function DroppableBoard({ placedWords, boardRef }) {
