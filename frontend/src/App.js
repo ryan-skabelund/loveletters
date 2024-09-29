@@ -1,17 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Player from './components/Player';
-import Server from './components/Server';
+
+import Player from './endpoints/player/Player';
+import Observer from './endpoints/observer/Observer';
 
 function App() {
   return (
     <Router>
-      <div>
-        <Routes>
-          <Route path="/" element={<Player/>}></Route>
-          <Route path="/server" element={<Server/>}></Route>
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Player/>}></Route>
+        <Route path="/observer" element={<Observer/>}></Route>
+      </Routes>
     </Router>
   );
 }
