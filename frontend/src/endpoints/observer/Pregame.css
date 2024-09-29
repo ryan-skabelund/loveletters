@@ -168,3 +168,12 @@ body, html {
     outline: 2px solid #2563eb;
     outline-offset: 2px;
   }
+
+  .qr-code {
+    width: 50%;       /* Full width of the container, adjust as needed */
+    height: auto;      /* Maintain aspect ratio */
+    display: block;    /* Remove any inline spacing */
+    margin-top: 20px;  /* Space above the image */
+    margin-left: auto; /* Centers the image horizontally */
+    margin-right: auto;/* Centers the image horizontally */
+}

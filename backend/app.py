@@ -53,7 +53,7 @@ def submit_response(data):
 
     if game_manager.round_phase == RoundPhase.WATCH:
         def view_next_player():
-            socketio.sleep(12)
+            socketio.sleep(10)
             if game_manager.viewing_index + 1 < len(game_manager.players):
                 game_manager.viewing_index += 1
                 send_game_state()

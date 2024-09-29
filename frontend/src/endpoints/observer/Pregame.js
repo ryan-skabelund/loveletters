@@ -3,6 +3,8 @@ import { ServerIcon, UsersIcon } from "lucide-react";
 import { useGameState } from "../../state/GameState";
 import './Pregame.css';
 
+import qrcode from '../../components/qr-code.png';
+
 function Pregame() {
     const { sendToServer, players, max_players } = useGameState();
 
@@ -30,6 +32,7 @@ function Pregame() {
                         <button className="start-button" onClick={startGame}>Start Game</button>
                     )}
                 </div>
+                <img src={qrcode} alt="Game Scene" className="qr-code" />
             </div>
         </div>
     );
